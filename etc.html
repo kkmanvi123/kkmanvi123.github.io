@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etc - Manvi Kottakota</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">MK</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="thoughts.html">Thoughts</a></li>
+          <li><a href="etc.html">Etc.</a></li> 
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="etc-page">
+        <h2>What I've Been Loving</h2>
+        <p class="etc-description">A glimpse into who I am and what I love—whether it's books, music, hiking, or travel, these are some of the things that inspire and motivate me.</p>
+        
+        <!-- Filter Section - Color Coded -->
+        <div class="filter">
+          <button class="filter-btn all-btn active" onclick="filterContent('all')">Show All</button>
+          <button class="filter-btn book-btn" onclick="filterContent('book')">Books</button>
+          <button class="filter-btn song-btn" onclick="filterContent('song')">Music</button>
+          <button class="filter-btn nature-btn" onclick="filterContent('nature')">Nature</button>
+          <button class="filter-btn media-btn" onclick="filterContent('media')">Media</button>
+        </div>
+        
+        <!-- Thoughts Collage -->
+        <div class="loving-list" id="thoughts-collage">
+          <!-- Book Card -->
+          <div class="loving-card book">
+            <h4>Book: "Atomic Habits"</h4>
+            <p>Atomic Habits by James Clear is a great read on how small habits can lead to big changes...</p>
+          </div>
+          
+          <!-- Song Card -->
+          <div class="loving-card song">
+            <h4>Song: "Levitating" by Dua Lipa</h4>
+            <iframe src="https://open.spotify.com/embed/track/2g2G00kFsa9hF1pJ3m5xG2" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+          
+          <!-- Nature Card -->
+          <div class="loving-card nature">
+            <h4>Hiking: Marin Headlands</h4>
+            <img src="https://example.com/marin-headlands.jpg" alt="Marin Headlands" />
+          </div>
+          
+          <!-- Media Card -->
+          <div class="loving-card media">
+            <h4>Video: My Trip to Europe</h4>
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/xyz123456" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Manvi Kottakota</p>
+    </footer>
+  </div>
+  
+  <script>
+    function filterContent(category) {
+      // First, remove active class from all buttons
+      let allButtons = document.querySelectorAll('.filter-btn');
+      allButtons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Add active class to clicked button
+      event.currentTarget.classList.add('active');
+      
+      // Show/hide content based on category
+      let allItems = document.querySelectorAll('.loving-card');
+      
+      if (category === 'all') {
+        // Show all items
+        allItems.forEach(item => {
+          item.style.display = 'block';
+        });
+      } else {
+        // Show only selected category
+        allItems.forEach(item => {
+          if (item.classList.contains(category)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

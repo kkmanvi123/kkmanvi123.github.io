@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,119 +6,439 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif; /* Sleek, modern typography */
+    background-color: #f4f4f4;
+    color: #333;
     line-height: 1.6;
-    background-color: #121212;
-    color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
 header {
-    background-color: #333;
-    padding: 1rem;
-}
-
-header nav ul {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
 }
 
-header nav ul li {
+header .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
     list-style-type: none;
 }
 
-header nav ul li a {
-    color: #fff;
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
     text-decoration: none;
-    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-    color: #f39c12;
+nav ul li a:hover {
+    color: #007bff;
 }
 
-.theme-toggle-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
+/* Main Content Styling */
+main {
+    margin-top: 40px;
 }
 
-button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
+/* Homepage Styles */
+#intro {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.intro-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.intro-image {
+    flex: 1;
+    max-width: 200px;
+    height: 280px;
+    margin-right: 30px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-clip: content-box;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.intro-text {
+    flex: 2;
+    max-width: 600px;
+}
+
+#intro h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-top: 7px;
+    color: #555;
+    font-weight: 300;
+}
+
+.bio {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0;
+}
+
+.social-icon {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.4);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #242424;
+    transform: scale(1.1);
+}
+
+/* Footer Styles for Homepage */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 40px;
+}
+
+footer p {
+    color: #777;
+}
+
+/* Projects Page Styles */
+#projects-page {
+    padding: 30px 0; /* Reduced padding to move header up */
+}
+
+#projects-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #333; /* Keeping black and white text */
+}
+
+/* Button Style for "View Project" */
+.view-project-btn {
+    margin-top: 15px;
+    padding: 6px 16px; /* Smaller button */
+    background-color: #fff;
+    color: #333; /* Default text color */
+    border: 1px solid #333;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    align-self: flex-end; /* Align to the right */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+}
+
+/* Hover State for "View Project" Button */
+.view-project-btn:hover {
+    background-color: #3333336a; /* Slightly darker background */
+    color: #fff; /* White text on hover */
+}
+
+/* Thoughts Page Styles */
+#thoughts-page {
+    padding: 30px 0; /* Reduced padding to move header up */
+}
+
+#thoughts-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.thoughts-description {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+#brain-dump {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.article-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.article-link h3 {
+    font-size: 1.2rem; /* Bigger title */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.article-date {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #333;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+/* Etc Page Styles */
+#etc-page {
+    padding: 30px 0; /* Reduced padding to move header up */
+}
+
+#etc-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.etc-description {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+#etc-page h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+}
+
+/* Color-Coded Filter Buttons */
+.filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #fff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
     cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.5px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* All button - Gray */
+.filter-btn.all-btn {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.filter-btn.all-btn:hover,
+.filter-btn.all-btn.active {
+    background-color: #6c757d;
     color: #fff;
 }
 
-/* Section Styles */
-section {
-    padding: 4rem 2rem;
-    min-height: 100vh;
-    transition: background-color 0.3s ease;
+/* Book button - Blue */
+.filter-btn.book-btn {
+    border-color: #4285F4;
+    color: #4285F4;
 }
 
-h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
+.filter-btn.book-btn:hover,
+.filter-btn.book-btn.active {
+    background-color: #4285F4;
+    color: #fff;
 }
 
-.project {
-    margin: 1rem 0;
-    padding: 1rem;
-    background: #333;
+/* Song button - Purple */
+.filter-btn.song-btn {
+    border-color: #8e44ad;
+    color: #8e44ad;
+}
+
+.filter-btn.song-btn:hover,
+.filter-btn.song-btn.active {
+    background-color: #8e44ad;
+    color: #fff;
+}
+
+/* Nature button - Green */
+.filter-btn.nature-btn {
+    border-color: #27ae60;
+    color: #27ae60;
+}
+
+.filter-btn.nature-btn:hover,
+.filter-btn.nature-btn.active {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+/* Media button - Orange */
+.filter-btn.media-btn {
+    border-color: #e67e22;
+    color: #e67e22;
+}
+
+.filter-btn.media-btn:hover,
+.filter-btn.media-btn.active {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+/* Hover effect for all buttons */
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Color-coded cards */
+.loving-card {
+    background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 4px solid transparent;
+    margin-top: 15px;
 }
 
-.project h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+/* Default card border (when all is selected) */
+.loving-card {
+    border-left-color: #6c757d;
 }
 
-/* Smooth Scroll Styles */
-.smooth-scroll {
-    scroll-behavior: smooth;
+/* Book card - Blue */
+.loving-card.book {
+    border-left-color: #4285F4;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
+/* Song card - Purple */
+.loving-card.song {
+    border-left-color: #8e44ad;
 }
 
-/* Light Mode */
-body.light-theme {
-    background-color: #f4f4f4;
-    color: #333;
+/* Nature card - Green */
+.loving-card.nature {
+    border-left-color: #27ae60;
 }
 
-body.light-theme header {
-    background-color: #fff;
+/* Media card - Orange */
+.loving-card.media {
+    border-left-color: #e67e22;
 }
 
-body.light-theme header nav ul li a {
-    color: #333;
-}
-
-body.light-theme header nav ul li a:hover {
-    color: #f39c12;
-}
-
-body.light-theme section {
-    background-color: #fff;
-    color: #333;
-}
-
-body.light-theme .project {
-    background-color: #f9f9f9;
-}
-
-/* Add transitions for smooth change between themes */
-body, header, section, .project {
-    transition: all 0.3s ease;
+.loving-card:hover {
+    transform: scale(1.05);
 }
