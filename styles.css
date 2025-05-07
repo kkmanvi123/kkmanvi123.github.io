@@ -1,0 +1,124 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header nav ul li {
+    list-style-type: none;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #f39c12;
+}
+
+.theme-toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Smooth Scroll Styles */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+}
+
+/* Light Mode */
+body.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.light-theme header {
+    background-color: #fff;
+}
+
+body.light-theme header nav ul li a {
+    color: #333;
+}
+
+body.light-theme header nav ul li a:hover {
+    color: #f39c12;
+}
+
+body.light-theme section {
+    background-color: #fff;
+    color: #333;
+}
+
+body.light-theme .project {
+    background-color: #f9f9f9;
+}
+
+/* Add transitions for smooth change between themes */
+body, header, section, .project {
+    transition: all 0.3s ease;
+}
