@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etc - Manvi Kottakota</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome for pin icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
   <div class="container">
@@ -16,88 +17,44 @@
           <li><a href="index.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="thoughts.html">Thoughts</a></li>
-          <li><a href="etc.html">Etc.</a></li> 
+          <li><a href="etc.html">Etc.</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
       <section id="etc-page">
         <h2>What I've Been Loving</h2>
         <p class="etc-description">A glimpse of what I've been into lately—books, music, hiking, etc.</p>
-        
-        <!-- Filter Section - Color Coded -->
-        <div class="filter">
-          <button class="filter-btn all-btn active" onclick="filterContent('all')">Show All</button>
-          <button class="filter-btn book-btn" onclick="filterContent('book')">Books</button>
-          <button class="filter-btn song-btn" onclick="filterContent('song')">Music</button>
-          <button class="filter-btn nature-btn" onclick="filterContent('nature')">Nature</button>
-          <button class="filter-btn media-btn" onclick="filterContent('media')">Media</button>
-        </div>
-        
-        <!-- Thoughts Collage -->
-        <div class="loving-list" id="thoughts-collage">
-          <!-- Book Card -->
-          <div class="loving-card book">
-            <h4>Book: "Atomic Habits"</h4>
-            <p>Atomic Habits by James Clear is a great read on how small habits can lead to big changes...</p>
+
+        <!-- Simple List Layout -->
+        <div class="etc-list">
+          <div class="etc-item">
+            <h3>Books</h3>
+            <p><strong>Atomic Habits</strong> by James Clear - A transformative read about the power of small habits and how they compound over time. It’s a book that motivated me to make positive changes in my daily routine.</p>
+            <p><strong>Sapiens</strong> by Yuval Noah Harari - A fascinating exploration of human history, offering profound insights into how we evolved and shaped the world we live in today.</p>
+            <p><strong>Project Hail Mary</strong> by Andy Weir - A gripping sci-fi thriller about a lone astronaut tasked with saving humanity. It blends humor with tension and deep thinking, making it a captivating read.</p>
           </div>
-          
-          <!-- Song Card -->
-          <div class="loving-card song">
-            <h4>Song: "Levitating" by Dua Lipa</h4>
-            <iframe src="https://open.spotify.com/embed/track/2g2G00kFsa9hF1pJ3m5xG2" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+          <div class="etc-item">
+            <h3>Music</h3>
+            <p><strong>Fleetwood Mac</strong> - "Silver Springs" and "Rhiannon" evoke deep emotions, making me feel connected to something timeless.</p>
+            <p><strong>Durand Jones & The Indications</strong> - Songs like "Is It Any Wonder" and "Cruisin’ to the Park" bring warmth and nostalgia with their soulful vibe.</p>
+            <p><strong>Khruangbin</strong> - "What Once Was" calms my mind and helps me focus with its smooth, instrumental sound.</p>
           </div>
-          
-          <!-- Nature Card -->
-          <div class="loving-card nature">
-            <h4>Hiking: Marin Headlands</h4>
-            <p>This beautiful trail offers stunning views of the Golden Gate Bridge and the Pacific Ocean.</p>
-            <img src="/api/placeholder/400/320" alt="Marin Headlands" />
-          </div>
-          
-          <!-- Media Card -->
-          <div class="loving-card media">
-            <h4>Video: My Trip to Europe</h4>
-            <p>Highlights from my summer adventure across Italy, Spain, and France.</p>
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-          </div>
-          
-          <!-- Additional Cards for Better Grid Display -->
-          <div class="loving-card book">
-            <h4>Book: "Sapiens"</h4>
-            <p>Yuval Noah Harari's fascinating exploration of human history and how we came to dominate the planet.</p>
-          </div>
-          
-          <div class="loving-card song">
-            <h4>Album: "Folklore" by Taylor Swift</h4>
-            <p>A beautiful collection of introspective songs that I've had on repeat lately.</p>
-            <iframe src="https://open.spotify.com/embed/album/1pzvBxYgT6OVwJLtHkrdQK" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          </div>
-          
-          <div class="loving-card nature">
-            <h4>Hiking: Point Reyes National Seashore</h4>
-            <p>Exploring the beautiful coastal trails and seeing the elephant seals was incredible!</p>
-            <img src="/api/placeholder/400/320" alt="Point Reyes" />
-          </div>
-          
-          <div class="loving-card media">
-            <h4>Film: "Everything Everywhere All at Once"</h4>
-            <p>An absolute masterpiece that blends sci-fi, comedy, and deep emotional storytelling.</p>
-          </div>
-          
-          <div class="loving-card book">
-            <h4>Book: "Project Hail Mary"</h4>
-            <p>Andy Weir's new sci-fi thriller about a lone astronaut who must save humanity from extinction.</p>
+
+          <div class="etc-item">
+            <h3>Nature</h3>
+            <p><strong>Hiking: Marin Headlands</strong> - A beautiful trail offering panoramic views of the Golden Gate Bridge and the Pacific Ocean. The serenity and beauty here always give me a sense of calm and inspiration.</p>
+            <p><strong>Hiking: Point Reyes National Seashore</strong> - A secluded gem along California’s coastline, perfect for exploring coastal cliffs and watching elephant seals. It’s a peaceful escape into nature.</p>
           </div>
         </div>
       </section>
     </main>
+
     <footer>
       <p>&copy; 2025 Manvi Kottakota</p>
     </footer>
   </div>
-  
-  <!-- Link to External JS File -->
-  <script src="script.js"></script>
 </body>
 </html>

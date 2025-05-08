@@ -6,14 +6,14 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Sleek, modern typography */
+    font-family: 'Inter', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px; /* Increased container width for larger margins */
     margin: 0 auto;
     padding: 20px;
 }
@@ -291,7 +291,7 @@ footer p {
 }
 
 #etc-page h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 10px;
     color: #333;
     text-align: center;
@@ -305,219 +305,75 @@ footer p {
     font-weight: 300;
 }
 
-#etc-page h4 {
-    font-size: 1rem;
-    margin-bottom: 10px;
+/* Simple List Layout Styles */
+.etc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.etc-item {
+    padding: 25px;
+    /* Remove the white background */
+    background-color: transparent; /* No background color */
+    box-shadow: none; /* Remove box shadow */
+    transition: background-color 0.3s ease;
+}
+
+.etc-item h3 {
+    font-size: 1.5rem;
     color: #333;
-    text-align: left;
+    margin-bottom: 15px;
+    margin-left: 10px; /* Add margin to separate the subtitle */
 }
 
-/* Color-Coded Filter Buttons */
-.filter {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0 40px;
-    flex-wrap: wrap;
+.etc-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-left: 20px; /* Indent text underneath the subtitles */
 }
 
-.filter-btn {
-    background-color: #fff;
-    padding: 8px 18px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    letter-spacing: 0.5px;
-    border-width: 1px;
-    border-style: solid;
+.etc-item ul {
+    list-style-type: none;
 }
 
-/* All button - Gray */
-.filter-btn.all-btn {
-    border-color: #6c757d;
-    color: #6c757d;
+.etc-item ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+    margin-left: 20px; /* Indent list items */
 }
 
-.filter-btn.all-btn:hover,
-.filter-btn.all-btn.active {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-/* Book button - Blue */
-.filter-btn.book-btn {
-    border-color: #4285F4;
-    color: #4285F4;
-}
-
-.filter-btn.book-btn:hover,
-.filter-btn.book-btn.active {
-    background-color: #4285F4;
-    color: #fff;
-}
-
-/* Song button - Purple */
-.filter-btn.song-btn {
-    border-color: #8e44ad;
-    color: #8e44ad;
-}
-
-.filter-btn.song-btn:hover,
-.filter-btn.song-btn.active {
-    background-color: #8e44ad;
-    color: #fff;
-}
-
-/* Nature button - Green */
-.filter-btn.nature-btn {
-    border-color: #27ae60;
-    color: #27ae60;
-}
-
-.filter-btn.nature-btn:hover,
-.filter-btn.nature-btn.active {
-    background-color: #27ae60;
-    color: #fff;
-}
-
-/* Media button - Orange */
-.filter-btn.media-btn {
-    border-color: #e67e22;
-    color: #e67e22;
-}
-
-.filter-btn.media-btn:hover,
-.filter-btn.media-btn.active {
-    background-color: #e67e22;
-    color: #fff;
-}
-
-/* Hover effect for all buttons */
-.filter-btn:hover {
-    transform: translateY(-2px);
-}
-
-/* Grid Layout for Loving List - Column-only layout */
-.loving-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 20px;
-    justify-content: flex-start; /* Ensure left-aligned */
-    margin-top: 0;
-}
-
-/* Create three equal columns that stack on small screens */
-.column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 0; /* Prevents overflow issues */
-}
-
-/* Media queries for responsive columns */
-@media (max-width: 768px) {
-    .loving-list {
-        flex-direction: row;
-    }
-    
-    .column {
-        flex-basis: calc(50% - 10px); /* Two columns on medium screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .column {
-        flex-basis: 100%; /* One column on small screens */
-    }
-}
-
-/* Loving Card Styles */
-.loving-card {
-    background-color: #fff;
+/* Footer Styles for All Pages */
+footer {
+    text-align: center;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-left: 4px solid transparent;
-    height: fit-content; /* Let card size adjust based on content */
-    width: 100%; /* Ensure cards take full width of their column */
+    font-size: 1rem;
+    margin-top: 40px;
 }
 
-/* Default card border (when all is selected) */
-.loving-card {
-    border-left-color: #6c757d;
+footer p {
+    color: #777;
 }
 
-/* Book card - Blue */
-.loving-card.book {
-    border-left-color: #4285F4;
-}
-
-/* Song card - Purple */
-.loving-card.song {
-    border-left-color: #8e44ad;
-}
-
-/* Nature card - Green */
-.loving-card.nature {
-    border-left-color: #27ae60;
-}
-
-/* Media card - Orange */
-.loving-card.media {
-    border-left-color: #e67e22;
-}
-
-.loving-card:hover {
-    transform: scale(1.05);
-}
-
-/* Make iframe and images responsive within cards */
-.loving-card iframe,
-.loving-card img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
-/* Smaller height for Spotify embeds */
-.loving-card iframe[src*="spotify"] {
-    height: 80px;
-}
-
-/* Maintain YouTube embed aspect ratio */
-.loving-card iframe[src*="youtube"] {
-    aspect-ratio: 16/9;
-    height: auto;
-}
-
-/* Media queries for better responsiveness */
+/* Responsive Layout */
 @media (max-width: 768px) {
-    .loving-list {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    .etc-list {
+        gap: 20px;
     }
-    
-    .project-list {
-        grid-template-columns: repeat(2, 1fr);
+
+    .etc-item {
+        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .loving-list {
-        grid-template-columns: 1fr;
+    .etc-item h3 {
+        font-size: 1.4rem;
     }
-    
-    .project-list {
-        grid-template-columns: 1fr;
+
+    .etc-item ul li {
+        font-size: 0.9rem;
     }
 }
