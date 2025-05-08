@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etc - Manvi Kottakota</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -22,7 +23,7 @@
     <main>
       <section id="etc-page">
         <h2>What I've Been Loving</h2>
-        <p class="etc-description">A glimpse into who I am and what I love—whether it's books, music, hiking, or travel, these are some of the things that inspire and motivate me.</p>
+        <p class="etc-description">A glimpse of what I've been into lately—books, music, hiking, etc.</p>
         
         <!-- Filter Section - Color Coded -->
         <div class="filter">
@@ -50,13 +51,43 @@
           <!-- Nature Card -->
           <div class="loving-card nature">
             <h4>Hiking: Marin Headlands</h4>
-            <img src="https://example.com/marin-headlands.jpg" alt="Marin Headlands" />
+            <p>This beautiful trail offers stunning views of the Golden Gate Bridge and the Pacific Ocean.</p>
+            <img src="/api/placeholder/400/320" alt="Marin Headlands" />
           </div>
           
           <!-- Media Card -->
           <div class="loving-card media">
             <h4>Video: My Trip to Europe</h4>
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/xyz123456" frameborder="0" allowfullscreen></iframe>
+            <p>Highlights from my summer adventure across Italy, Spain, and France.</p>
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+          
+          <!-- Additional Cards for Better Grid Display -->
+          <div class="loving-card book">
+            <h4>Book: "Sapiens"</h4>
+            <p>Yuval Noah Harari's fascinating exploration of human history and how we came to dominate the planet.</p>
+          </div>
+          
+          <div class="loving-card song">
+            <h4>Album: "Folklore" by Taylor Swift</h4>
+            <p>A beautiful collection of introspective songs that I've had on repeat lately.</p>
+            <iframe src="https://open.spotify.com/embed/album/1pzvBxYgT6OVwJLtHkrdQK" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+          
+          <div class="loving-card nature">
+            <h4>Hiking: Point Reyes National Seashore</h4>
+            <p>Exploring the beautiful coastal trails and seeing the elephant seals was incredible!</p>
+            <img src="/api/placeholder/400/320" alt="Point Reyes" />
+          </div>
+          
+          <div class="loving-card media">
+            <h4>Film: "Everything Everywhere All at Once"</h4>
+            <p>An absolute masterpiece that blends sci-fi, comedy, and deep emotional storytelling.</p>
+          </div>
+          
+          <div class="loving-card book">
+            <h4>Book: "Project Hail Mary"</h4>
+            <p>Andy Weir's new sci-fi thriller about a lone astronaut who must save humanity from extinction.</p>
           </div>
         </div>
       </section>
@@ -66,36 +97,7 @@
     </footer>
   </div>
   
-  <script>
-    function filterContent(category) {
-      // First, remove active class from all buttons
-      let allButtons = document.querySelectorAll('.filter-btn');
-      allButtons.forEach(btn => {
-        btn.classList.remove('active');
-      });
-      
-      // Add active class to clicked button
-      event.currentTarget.classList.add('active');
-      
-      // Show/hide content based on category
-      let allItems = document.querySelectorAll('.loving-card');
-      
-      if (category === 'all') {
-        // Show all items
-        allItems.forEach(item => {
-          item.style.display = 'block';
-        });
-      } else {
-        // Show only selected category
-        allItems.forEach(item => {
-          if (item.classList.contains(category)) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      }
-    }
-  </script>
+  <!-- Link to External JS File -->
+  <script src="script.js"></script>
 </body>
 </html>
