@@ -1,58 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Manvi Kottakota - Product Manager & Data Scientist</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Font Awesome for icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden; /* disables body scroll */
+    }
+
+    .scroll-container {
+      height: 100%;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #projects {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      scroll-margin-top: 0;
+    }
+
+    #projects.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-item a {
+      color: #383838;
+      text-decoration: none;
+    }
+
+    .project-item a i {
+      margin-left: 6px;
+      font-size: 0.85em;
+    }
+
+    header {
+      position: sticky;
+      top: 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+      z-index: 9999;
+      transition: background-color 0.3s;
+    }
+
+    #backToTop:hover {
+      background-color: #555;
+    }
+
+    #backToTop i {
+      margin-right: 6px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">MK</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="thoughts.html">Thoughts</a></li>
-          <li><a href="etc.html">Etc.</a></li> <!-- Added Etc link -->
-        </ul>
-      </nav>
-    </header>
+  <div class="scroll-container">
+    <div class="container">
+      <header>
+        <div class="logo">MK</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="#projects" class="scroll-to-projects">Projects</a></li>
+            <li><a href="thoughts.html">Thoughts</a></li>
+            <li><a href="etc.html">Etc.</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <!-- Home Page Intro Section -->
-      <section id="intro" class="section">
-        <div class="intro-content">
-          <div class="intro-image">
-            <img src="intro-image.png" alt="Manvi Kottakota" />
-          </div>
-          <div class="intro-text">
-            <h1>Hey there, I'm Manvi!</h1>
-            <p class="subtitle"><i>Passionate about building with impact at scale :)</i></p>
-            <p class="bio">Based in the Bay Area with a background in machine learning and data science, I'm currently working at IBM on B2B go-to-market strategy for Gen AI products like WatsonX. Outside of work, I enjoy running, yoga, hiking, and getting creative with videography and jewelry-making.</p>
-            <p class="bio">Feel free to reach out—I'd love to chat!</p>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/manvi-kottakota" target="_blank" class="social-icon">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/kkmanvi123" target="_blank" class="social-icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="mailto:kkmanvi123@gmail.com" class="social-icon">
-                <i class="fas fa-envelope"></i>
-              </a>
+      <main>
+        <section id="intro" class="section">
+          <div class="intro-content">
+            <div class="intro-image">
+              <img src="/images/intro.jpg" alt="Manvi Kottakota" />
+            </div>
+            <div class="intro-text">
+              <h1>Hey there, I'm Manvi!</h1>
+              <p class="subtitle"><i>Building with impact at scale :)</i></p>
+              <p class="bio">Based in the Bay Area with a background in machine learning and data science, I'm currently working at IBM on B2B go-to-market strategy for Gen AI products like WatsonX. Outside of work, I enjoy running, yoga, hiking, and getting creative with videography and jewelry-making.</p>
+              <p class="bio">Feel free to reach out—I'd love to chat!</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/manvi-kottakota" target="_blank" class="social-icon">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/kkmanvi123" target="_blank" class="social-icon">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:kkmanvi123@gmail.com" class="social-icon">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
 
-    <footer>
-      <p>&copy; 2025 Manvi Kottakota</p>
-    </footer>
+        <section id="projects" class="section">
+          <h2>Projects</h2>
+          <div class="project-item">
+            <p><strong>
+              <a href="https://github.com/kkmanvi123/root-cause-analysis" target="_blank">
+                Root Cause Analysis (RCA) Model <i class="fas fa-arrow-up-right-from-square"></i>
+              </a></strong> – ML model to predict and diagnose software bugs
+            </p>
+          </div>
+          <div class="project-item">
+            <p><strong>
+              <a href="https://github.com/kkmanvi123/fable-generation" target="_blank">
+                Fable Generation Models <i class="fas fa-arrow-up-right-from-square"></i>
+              </a></strong> – Compared LSTM, GPT-2, and Markov Chains to generate stories
+            </p>
+          </div>
+          <div class="project-item">
+            <p><strong>
+              <a href="https://github.com/kkmanvi123/NLP-framework" target="_blank">
+                NLP Framework <i class="fas fa-arrow-up-right-from-square"></i>
+              </a></strong> – Framework for text analysis, sentiment detection, and visualizations
+            </p>
+          </div>
+          <div class="project-item">
+            <p><strong>
+              <a href="https://github.com/kkmanvi123/mongodb-religionAPI" target="_blank">
+                MongoDB Religion API <i class="fas fa-arrow-up-right-from-square"></i>
+              </a></strong> – API to explore global religious institution data easily
+            </p>
+          </div>
+          <div class="project-item">
+            <p><strong>
+              <a href="https://kkmanvi123.github.io/world-happiness-report/" target="_blank">
+                World Happiness Report <i class="fas fa-arrow-up-right-from-square"></i>
+              </a></strong> – Visualized happiness data across countries on a webpage
+            </p>
+          </div>
+          <div class="project-item">
+            <p><strong>
+              <a href="https://github.com/kkmanvi123/evolutionary-computing" target="_blank">
+                Evolutionary Computing Library <i class="fas fa-arrow-up-right-from-square"></i>
+              </a></strong> – Python library for optimization using genetic algorithms
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Manvi Kottakota</p>
+      </footer>
+
+      <!-- Back to Top Button -->
+      <button id="backToTop" title="Back to top">
+        <i class="fas fa-arrow-up"></i> Top
+      </button>
+    </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollContainer = document.querySelector('.scroll-container');
+      const projectsSection = document.getElementById('projects');
+      const backToTopBtn = document.getElementById('backToTop');
+
+      // Disable manual scrolling by user
+      scrollContainer.addEventListener('wheel', e => e.preventDefault(), { passive: false });
+      scrollContainer.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+      scrollContainer.addEventListener('keydown', e => {
+        const keys = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '];
+        if (keys.includes(e.key)) e.preventDefault();
+      });
+
+      // JS-based scroll detection
+      scrollContainer.addEventListener('scroll', checkScroll);
+
+      function checkScroll() {
+        const scrollPosition = scrollContainer.scrollTop;
+        const windowHeight = scrollContainer.clientHeight;
+
+        if (scrollPosition >= windowHeight * 0.9) {
+          projectsSection.classList.add('visible');
+        }
+
+        if (scrollPosition > 300) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      }
+
+      document.querySelector('.scroll-to-projects').addEventListener('click', function (e) {
+        e.preventDefault();
+        projectsSection.classList.add('visible');
+        projectsSection.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+
+      backToTopBtn.addEventListener('click', function () {
+        scrollContainer.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      checkScroll();
+    });
+  </script>
 </body>
 </html>

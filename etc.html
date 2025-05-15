@@ -7,6 +7,76 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Add Font Awesome for pin icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Section navigation styles */
+    .section-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0rem 0 2rem;
+      z-index: 100;
+    }
+    
+    .section-nav-button {
+      background-color: #ddd;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: rgb(44, 44, 44);
+    }
+    
+    .section-nav-button:hover {
+      background-color: #f5f5f5;
+    }
+    
+    .section-nav-button i {
+      margin-right: 0.5rem;
+    }
+
+    /* Sticky navigation styles - now using floating buttons */
+    .sticky-nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+    
+    .sticky-nav.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    .sticky-nav-button {
+      background-color: #f5f5f5;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: black;
+      text-decoration: none;
+      opacity: 0.9;
+    }
+    
+    .sticky-nav-button:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -15,38 +85,133 @@
       <nav>
         <ul>
           <li><a href="index.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#projects" class="scroll-to-projects">Projects</a></li>
           <li><a href="thoughts.html">Thoughts</a></li>
           <li><a href="etc.html">Etc.</a></li>
         </ul>
       </nav>
     </header>
 
+    <!-- Add sticky navigation - now as floating buttons -->
+    <div class="sticky-nav">
+      <a href="#books" class="sticky-nav-button"><i class="fas fa-book"></i></a>
+      <a href="#music" class="sticky-nav-button"><i class="fas fa-music"></i></a>
+      <a href="#adventures" class="sticky-nav-button"><i class="fas fa-mountain"></i></a>
+    </div>
+
     <main>
       <section id="etc-page">
         <h2>What I've Been Loving</h2>
-        <p class="etc-description">A glimpse of what I've been into lately—books, music, hiking, etc.</p>
+        <p class="etc-description">Glimpse into what consumes my freetime—reading, music, hiking, etc.</p>
+        
+        <!-- Added section navigation buttons -->
+        <div class="section-navigation">
+          <a href="#books" class="section-nav-button"><i class="fas fa-book"></i>Books</a>
+          <a href="#music" class="section-nav-button"><i class="fas fa-music"></i>Music</a>
+          <a href="#adventures" class="section-nav-button"><i class="fas fa-mountain"></i>Adventures</a>
+        </div>
 
-        <!-- Simple List Layout -->
         <div class="etc-list">
-          <div class="etc-item">
+          <div id="books" class="etc-item">
             <h3>Books</h3>
-            <p><strong>Atomic Habits</strong> by James Clear - A transformative read about the power of small habits and how they compound over time. It’s a book that motivated me to make positive changes in my daily routine.</p>
-            <p><strong>Sapiens</strong> by Yuval Noah Harari - A fascinating exploration of human history, offering profound insights into how we evolved and shaped the world we live in today.</p>
-            <p><strong>Project Hail Mary</strong> by Andy Weir - A gripping sci-fi thriller about a lone astronaut tasked with saving humanity. It blends humor with tension and deep thinking, making it a captivating read.</p>
+            <p><strong>The Creative Act</strong> by Rick Rubin</p>
+            <p><strong>Tuesdays with Morrie</strong> by Mitch Albom</p>
+            <p><strong>Taking the Leap</strong> by Pema Chödrön</p>
+            <p><strong>Just Kids</strong> by Patti Smith</p>
+            <p><strong>Innocence, Knowledge, and Wonder</strong> by Osho</p>
           </div>
 
-          <div class="etc-item">
-            <h3>Music</h3>
-            <p><strong>Fleetwood Mac</strong> - "Silver Springs" and "Rhiannon" evoke deep emotions, making me feel connected to something timeless.</p>
-            <p><strong>Durand Jones & The Indications</strong> - Songs like "Is It Any Wonder" and "Cruisin’ to the Park" bring warmth and nostalgia with their soulful vibe.</p>
-            <p><strong>Khruangbin</strong> - "What Once Was" calms my mind and helps me focus with its smooth, instrumental sound.</p>
+          <div id="music" class="etc-item">
+            <h3>On Repeat</h3>
+            <div class="music-grid">
+              <div class="music-item">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4nZi6XNe36Ut4Nij3IQ1yC?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+
+              <div class="music-item">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5ZK62nSchTamBy8F6HIZov?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+
+              <div class="music-item">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3dvXRk7TZ929m21p49RR5P?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+
+              <div class="music-item">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1XrSjpNe49IiygZfzb74pk?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+            </div>
           </div>
 
-          <div class="etc-item">
-            <h3>Nature</h3>
-            <p><strong>Hiking: Marin Headlands</strong> - A beautiful trail offering panoramic views of the Golden Gate Bridge and the Pacific Ocean. The serenity and beauty here always give me a sense of calm and inspiration.</p>
-            <p><strong>Hiking: Point Reyes National Seashore</strong> - A secluded gem along California’s coastline, perfect for exploring coastal cliffs and watching elephant seals. It’s a peaceful escape into nature.</p>
+          <div id="adventures" class="etc-item">
+            <h3>Wandering</h3>
+            <div class="adventures-showcase">
+
+              <!-- Marin Headlands -->
+              <div class="adventure-featured">
+                <div class="adventure-image-featured">
+                  <img src="/images/headlands.png" alt="Marin Headlands" class="marin-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i> Marin Headlands</h4>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Adventure Tiles -->
+              <div class="adventures-tiles">
+
+                <div class="adventure-tile standard">
+                  <div class="adventure-image-tile">
+                    <img src="/images/yosemite.png" alt="Yosemite" />
+                    <div class="adventure-overlay">
+                      <h4><i class="fas fa-map-pin"></i> Yosemite</h4>
+                    </div>
+                  </div>
+                </div>
+            
+
+                <div class="adventure-tile standard">
+                  <div class="adventure-image-tile">
+                    <img src="/images/alamere.png" alt="Alamere Falls" />
+                    <div class="adventure-overlay">
+                      <h4><i class="fas fa-map-pin"></i> Alamere Falls Trail</h4>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Full-width Tennessee Valley Trail Video -->
+                <div class="adventure-tile wide">
+                  <div class="adventure-image-tile">
+                    <video autoplay muted loop playsinline width="100%" height="100%" style="object-fit: cover; border-radius: 12px;">
+                      <source src="/images/tv.mov" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <div class="adventure-overlay">
+                      <h4><i class="fas fa-map-pin"></i> Tennessee Valley Trail</h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="adventure-tile standard">
+                  <div class="adventure-image-tile">
+                    <img src="/images/eden.png" alt="Garden of Eden" />
+                    <div class="adventure-overlay">
+                      <h4><i class="fas fa-map-pin"></i> Garden of Eden</h4>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="adventure-tile standard">
+                  <div class="adventure-image-tile">
+                    <img src="/images/mammoth.png" alt="Mammoth Lakes" />
+                    <div class="adventure-overlay">
+                      <h4><i class="fas fa-map-pin"></i> Mammoth Lakes</h4>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
@@ -56,5 +221,21 @@
       <p>&copy; 2025 Manvi Kottakota</p>
     </footer>
   </div>
+  <script>
+    // Script to handle sticky navigation
+    document.addEventListener('DOMContentLoaded', function() {
+      const stickyNav = document.querySelector('.sticky-nav');
+      const mainNavigation = document.querySelector('.section-navigation');
+      const mainNavOffset = mainNavigation.offsetTop + 60; // Adjust for when you want it to appear
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > mainNavOffset) {
+          stickyNav.classList.add('visible');
+        } else {
+          stickyNav.classList.remove('visible');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
