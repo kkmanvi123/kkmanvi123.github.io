@@ -8,6 +8,76 @@
   <!-- Add Font Awesome for pin icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Section navigation styles */
+    .section-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0rem 0 2rem;
+      z-index: 100;
+    }
+    
+    .section-nav-button {
+      background-color: #ddd;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: rgb(44, 44, 44);
+    }
+    
+    .section-nav-button:hover {
+      background-color: #f5f5f5;
+    }
+    
+    .section-nav-button i {
+      margin-right: 0.5rem;
+    }
+
+    /* Sticky navigation styles - now using floating buttons */
+    .sticky-nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+    
+    .sticky-nav.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    .sticky-nav-button {
+      background-color: #f5f5f5;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: black;
+      text-decoration: none;
+      opacity: 0.9;
+    }
+    
+    .sticky-nav-button:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -34,7 +104,7 @@
       <section id="etc-page">
         <h2>What I've Been Loving</h2>
         <p class="etc-description">Glimpse into what consumes my freetime—reading, music, hiking, etc.</p>
-        
+
         <!-- Added section navigation buttons -->
         <div class="section-navigation">
           <a href="#books" class="section-nav-button"><i class="fas fa-book"></i>Books</a>
@@ -98,7 +168,7 @@
                     </div>
                   </div>
                 </div>
-            
+
 
                 <div class="adventure-tile standard">
                   <div class="adventure-image-tile">
@@ -158,7 +228,7 @@
       const stickyNav = document.querySelector('.sticky-nav');
       const mainNavigation = document.querySelector('.section-navigation');
       const mainNavOffset = mainNavigation.offsetTop + 60; // Adjust for when you want it to appear
-      
+
       window.addEventListener('scroll', function() {
         if (window.pageYOffset > mainNavOffset) {
           stickyNav.classList.add('visible');
@@ -169,4 +239,3 @@
     });
   </script>
 </body>
-</html>

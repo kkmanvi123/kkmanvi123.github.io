@@ -34,7 +34,7 @@ header .logo {
     font-weight: 700;
     letter-spacing: 1px;
   }  
-  
+
 
 nav ul {
     display: flex;
@@ -56,12 +56,12 @@ nav ul li a {
     border-radius: 999px; /* Makes it pill-shaped */
     transition: background-color 0.3s, color 0.3s;
   }
-  
+
   nav ul li a:hover {
     background-color: #333; /* Light gray background on hover */
     color: #f4f4f4; /* Optional: make text a bit bolder */
   }
-  
+
 
 /* Main Content Styling */
 main {
@@ -173,81 +173,6 @@ footer p {
     text-align: left;
 }
 
-html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden; /* disables body scroll */
-  }
-
-  .scroll-container {
-    height: 100%;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  #projects {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    padding: 2rem 0;
-    margin-top: 2rem;
-    scroll-margin-top: 0;
-  }
-
-  #projects.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .project-item {
-    margin-bottom: 1.5rem;
-  }
-
-  .project-item a {
-    font-family: 'Montserrat', sans-serif;
-    color: #383838;
-    text-decoration: none;
-  }
-
-  .project-item a i {
-    margin-left: 6px;
-    font-size: 0.85em;
-  }
-
-  header {
-    position: sticky;
-    top: 20px;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #backToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-    display: none;
-    z-index: 9999;
-    transition: background-color 0.3s;
-  }
-
-  #backToTop:hover {
-    background-color: #555;
-  }
-
-  #backToTop i {
-    margin-right: 6px;
-  }
-
 /* Thoughts Page Styles */
 #thoughts-page {
     padding: 30px 0;
@@ -289,7 +214,7 @@ html, body {
 }
 
 .article-date {
-    font-size: 0.90rem;
+    font-size: 0.9rem;
     font-style: italic;
     color: #333;
     font-weight: 300;
@@ -300,7 +225,7 @@ html, body {
 #etc-page {
     padding: 30px 0;
 }
-  
+
 #etc-page h2 {
     font-size: 1.7rem;
     margin-bottom: 0rem;
@@ -425,6 +350,7 @@ footer p {
 
 .adventure-featured {
     position: relative;
+    margin-bottom: 15px;
     width: 100%;
     overflow: hidden;
     border-radius: 16px;
