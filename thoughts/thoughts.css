@@ -1,0 +1,156 @@
+.back-button {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #555555af;
+  background-color: transparent;
+  padding: 2px 2px;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 80px; /* align with top of container */
+  transition: color 0.2s;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
+
+.back-button:hover {
+  color: #000;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+    line-height: 1.75;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    font-size: 1.7rem;      
+    margin-top: 0px;     
+    margin-bottom: 0.1rem;  
+    color: #111;
+  }
+  
+  .byline {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1.3rem;  /* space below byline before image */
+  }
+  
+  
+  
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  h3 {
+    font-size: 1rem;
+    margin-top: 2rem;
+    color: #555;
+  }
+  
+  p {
+    margin-bottom: 1.4rem;
+    font-size: 0.9rem;
+  }
+  
+  img.blog-img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 70%;
+    border-radius: 12px;
+    margin: 2rem 0 1rem;
+  }
+  
+  .caption {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .italic {
+    font-style: italic;
+  }
+  
+  strong {
+    font-weight: 700;
+  }
+  
+  em {
+    font-style: italic;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 3rem 0;
+  }
+  
+  ul.sources {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  
+  ul.sources li {
+    margin-bottom: 0.5rem;
+  }
+  
+  ul.sources a {
+    color: #1a0dab;
+    text-decoration: none;
+  }
+  
+  ul.sources a:hover {
+    text-decoration: underline;
+  }
+  
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    z-index: 9999;
+    transition: background-color 0.3s;
+  }
+  
+  #backToTop:hover {
+    background-color: #555;
+  }
+  
+  #backToTop i {
+    margin-right: 6px;
+  }
+  
+  .blog-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  

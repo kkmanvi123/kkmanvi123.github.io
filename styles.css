@@ -350,7 +350,6 @@ footer p {
 
 .adventure-featured {
     position: relative;
-    margin-bottom: 15px;
     width: 100%;
     overflow: hidden;
     border-radius: 16px;
@@ -474,3 +473,72 @@ footer p {
         font-size: 1.2rem;
     }
 }
+
+/* Section navigation styles */
+.section-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0rem 0 2rem;
+    z-index: 100;
+  }
+  
+  .section-nav-button {
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: rgb(44, 44, 44);
+  }
+  
+  .section-nav-button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .section-nav-button i {
+    margin-right: 0.5rem;
+  }
+
+  /* Sticky navigation styles - now using floating buttons */
+  .sticky-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .sticky-nav.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .sticky-nav-button {
+    background-color: #f5f5f5;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    opacity: 0.9;
+  }
+  
+  .sticky-nav-button:hover {
+    opacity: 1;
+  }
