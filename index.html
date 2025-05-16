@@ -7,7 +7,82 @@
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+      html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden; /* disables body scroll */
+    }
 
+    .scroll-container {
+      height: 100%;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #projects {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      scroll-margin-top: 0;
+    }
+
+    #projects.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-item a {
+      font-family: 'Montserrat', sans-serif;
+      color: #383838;
+      text-decoration: none;
+    }
+
+    .project-item a i {
+      margin-left: 6px;
+      font-size: 0.85em;
+    }
+
+    header {
+      position: sticky;
+      top: 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      display: none;
+      z-index: 9999;
+      transition: background-color 0.3s;
+    }
+
+    #backToTop:hover {
+      background-color: #555;
+    }
+
+    #backToTop i {
+      margin-right: 6px;
+    }
+  </style>
 </head>
 <body>
   <div class="scroll-container">
