@@ -5,10 +5,18 @@
     box-sizing: border-box;
 }
 
+:root {
+    --beige: #f5f1eb;
+    --maroon: #8b4744;
+    --maroon-light: #a85d5a;
+    --text-dark: #333;
+    --text-light: #666;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--beige);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
@@ -20,42 +28,104 @@ body {
 
 /* Header Styles */
 header {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 }
 
-header .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+.logo {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
 }
 
+/* Navigation */
 nav ul {
     display: flex;
     list-style-type: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
-nav ul li {
-    margin-left: 20px;
+    gap: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 999px;
-    transition: background-color 0.3s, color 0.3s;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #333;
-    color: #f4f4f4;
+    color: var(--maroon);
+}
+
+/* Typography */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: var(--maroon);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: var(--maroon);
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--maroon);
+}
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
 }
 
 /* Main Content Styling */
@@ -69,7 +139,7 @@ main {
     align-items: flex-start;
     justify-content: center;
     padding: 60px 20px;
-    margin-bottom: 70vh;
+    margin-bottom: 2rem;
 }
 
 .intro-content {
@@ -147,72 +217,12 @@ main {
     transform: scale(1.1);
 }
 
-/* Footer Styles for Homepage */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-    margin-top: 40px;
-}
-
-footer p {
-    color: #777;
-}
-
 /* Projects Page Styles */
 #projects h2 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     color: #333;
     text-align: left;
-}
-
-/* Thoughts Page Styles */
-#thoughts-page {
-    padding: 30px 0;
-}
-
-#thoughts-page h2 {
-    font-size: 1.7rem;
-    margin-bottom: 0px;
-    color: #333;
-    text-align: center;
-}
-
-.thoughts-description {
-    font-size: 1rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 40px;
-    font-weight: 300;
-}
-
-#brain-dump {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 0 20px;
-}
-
-.article-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.article-link h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.article-date {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: #333;
-    font-weight: 300;
-    margin-top: 5px;
 }
 
 /* Etc Page Styles */
@@ -403,63 +413,24 @@ footer p {
 }
 
 .section-nav-button {
-    background-color: #ddd;
-    border: 1px solid #ddd;
+    background-color: transparent;
+    border: 1px solid var(--maroon);
+    color: var(--maroon);
     border-radius: 20px;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.2s ease;
     text-decoration: none;
-    color: rgb(44, 44, 44);
 }
 
 .section-nav-button:hover {
-    background-color: #f5f5f5;
+    background-color: var(--maroon);
+    color: var(--beige);
 }
 
 .section-nav-button i {
     margin-right: 0.5rem;
-}
-
-/* Sticky navigation styles */
-.sticky-nav {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100px);
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-}
-
-.sticky-nav.visible {
-    transform: translateX(-50%) translateY(0);
-}
-
-.sticky-nav-button {
-    background-color: #f5f5f5;
-    border: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-    opacity: 0.9;
-}
-
-.sticky-nav-button:hover {
-    opacity: 1;
 }
 
 /* Responsive Layout Enhancements */

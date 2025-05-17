@@ -8,181 +8,882 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-      html, body {
-      margin: 0;
-      height: 100%;
-      overflow: hidden; /* disables body scroll */
-    }
-    
-    .scroll-container {
-      height: 100%;
-      overflow-y: scroll;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
+    :root {
+      --beige: #f5f1eb;
+      --maroon: #8b4744;
+      --maroon-light: #a85d5a;
+      --text-dark: #333;
+      --text-light: #666;
     }
 
-    #projects {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      padding: 2rem 0;
-      margin-top: 2rem;
-      scroll-margin-top: 0;
-    }
-
-    #projects.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .project-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .project-item a {
+    body {
       font-family: 'Montserrat', sans-serif;
-      color: #383838;
-      text-decoration: none;
+      background-color: var(--beige);
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.9rem;
     }
 
-    .project-item a i {
-      margin-left: 6px;
-      font-size: 0.85em;
+    .header-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(245, 241, 235, 0.95);
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      padding: 0 20px;
+      border-bottom: 1px solid rgba(139, 71, 68, 0.1);
     }
 
     header {
-      position: sticky;
-      top: 20px;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 0;
     }
 
-    #backToTop {
+    .logo {
+      font-size: 1.1rem;
+      color: var(--maroon);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+      color: var(--maroon-light);
+    }
+
+    .accent-link {
+      color: var(--maroon);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .accent-link:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--maroon);
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
+    }
+
+    .accent-link:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    .accent-link:hover {
+      color: var(--maroon-light);
+    }
+
+    main {
+      margin-top: 60px;
+      padding: 60px 0;
+    }
+
+    .pattern-grid {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(139, 71, 68, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 71, 68, 0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .intro-section {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+      margin-bottom: 2rem;
+      align-items: start;
+      position: relative;
+    }
+
+    .intro-side {
+      position: sticky;
+      top: 100px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      padding-right: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .intro-side::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    .intro-main {
+      padding-right: 2rem;
+    }
+
+    .intro-header {
+      margin-bottom: 3rem;
+    }
+
+    .intro-header h1 {
+      font-size: 2rem;
+      margin: 0;
+      line-height: 1.2;
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+
+    .intro-brief {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+
+    .location-text {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin: 1rem 0;
+      padding-left: 2px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .social-icon {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: var(--maroon);
+      transform: translateY(-3px);
+    }
+
+    .content-section {
+      margin-bottom: 3rem;
+    }
+
+    .content-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-summary {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(139, 71, 68, 0.1);
+    }
+
+    .project-title {
+      font-weight: 550;
+      color: var(--text-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title i {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .project-description {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .substack-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 4px 16px;
+      background-color: var(--maroon);
+      color: var(--beige);
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      margin: 0;
+      height: 24px;
+      margin-left: 8px;
+    }
+
+    .substack-button:hover {
+      background-color: var(--maroon-light);
+      transform: translateY(-2px);
+      color: var(--beige);
+    }
+
+    .substack-button i {
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .intro-section {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-main {
+        padding-right: 0;
+      }
+
+      .social-links {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .intro-side {
+        position: static;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .section-nav {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .section-nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 8px 20px;
+      background-color: transparent;
+      border: 1px solid var(--maroon);
+      color: var(--maroon);
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .section-nav-button:hover {
+      background-color: var(--maroon);
+      color: var(--beige);
+    }
+
+    .section-nav-button i {
+      font-size: 0.9rem;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .book-card {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(139, 71, 68, 0.1);
+    }
+
+    .book-title {
+      font-weight: 550;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .book-author {
+      font-size: 0.7rem;
+      color: var(--text-light);
+    }
+
+    .adventures-grid {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .adventures-row {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .adventures-row-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .adventures-row-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .adventure-card {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.5);
+      height: 280px;
+    }
+
+    .adventure-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .adventure-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.4s ease;
+    }
+
+    .adventure-card:hover .adventure-image {
+      transform: scale(1.05);
+    }
+
+    .adventure-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+      transition: all 0.3s ease;
+    }
+
+    .adventure-overlay h4 {
+      color: var(--beige);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      opacity: 0.95;
+    }
+
+    .adventure-overlay h4 i {
+      margin-right: 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .adventure-card:hover .adventure-overlay {
+      padding-bottom: 1.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .adventures-row-2,
+      .adventures-row-3 {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+      }
+
+      .adventures-grid {
+        gap: 0.6rem;
+      }
+    }
+
+    .books-list,
+    .projects-list {
+      margin-top: 0.5rem;
+    }
+
+    .book-item,
+    .project-item {
+      margin-bottom: 0.7rem;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    .project-item a {
+      color: var(--text-dark);
+      text-decoration: none;
+      display: inline;
+      font-size: 0.9rem;
+    }
+
+    .project-item a i {
+      font-size: 0.7rem;
+      margin-left: 0.2rem;
+      opacity: 0.7;
+    }
+
+    .project-item:hover a {
+      color: var(--maroon);
+    }
+
+    .project-item strong {
+      font-weight: 550;
+      color: var(--text-dark);
+      font-size: 0.85rem;
+    }
+
+    .project-item .project-description {
+      color: var(--text-light);
+      font-size: 0.75rem;
+      display: inline;
+      margin-left: 0.3rem;
+    }
+
+    .book-item strong,
+    .project-item strong {
+      font-weight: 550;
+      color: var(--text-dark);
+      font-size: 0.75rem;
+    }
+
+    .books-grid,
+    .projects-grid {
       display: none;
-      z-index: 9999;
-      transition: background-color 0.3s;
     }
 
-    #backToTop:hover {
-      background-color: #555;
+    .full-width-section {
+      grid-column: 1 / -1;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+      background: var(--beige);
+      width: 100%;
     }
 
-    #backToTop i {
-      margin-right: 6px;
+    /* Add styles for Substack embed */
+    .substack-embed {
+      margin-top: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .substack-embed:hover {
+      transform: translateY(-5px);
+    }
+
+    .substack-embed iframe {
+      width: 100%;
+      border: none;
+      background: transparent;
+    }
+
+    /* Style for Substack post preview */
+    .thought-preview {
+      background: rgba(139, 71, 68, 0.08);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .thought-preview:hover {
+      transform: translateY(-5px);
+      background: rgba(139, 71, 68, 0.12);
+    }
+
+    .thought-date {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+
+    .thought-title {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      font-weight: 550;
+    }
+
+    .thought-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .thought-read-more {
+      font-size: 0.75rem;
+      color: var(--maroon);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .thought-read-more i {
+      font-size: 0.7rem;
+      transition: transform 0.3s ease;
+    }
+
+    .thought-preview:hover .thought-read-more {
+      color: var(--maroon-light);
+    }
+
+    .thought-preview:hover .thought-read-more i {
+      transform: translateX(3px);
+    }
+
+    .books-list p {
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .books-list p:hover {
+      opacity: 1;
+    }
+
+    .book-item {
+      margin-bottom: 0.7rem;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      line-height: 1.4;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .book-item:hover {
+      opacity: 1;
+    }
+
+    /* Default styles for all screen sizes */
+    .intro-side .content-section,
+    .intro-side .content-section * {
+      transition: all 0.4s ease;
+    }
+
+    /* Laptop screens and larger (>768px) */
+    @media (min-width: 769px) {
+      .intro-side .content-section,
+      .intro-side .content-section * {
+        opacity: 0.8;
+      }
+
+      .intro-side .content-section:hover,
+      .intro-side .content-section:hover * {
+        opacity: 1;
+      }
+
+      .books-list p,
+      .thought-preview {
+        opacity: 0.5;
+      }
+
+      .books-list p:hover,
+      .thought-preview:hover {
+        opacity: 1;
+      }
+    }
+
+    /* Mobile screens (≤768px) */
+    @media (max-width: 768px) {
+      .intro-side .content-section,
+      .intro-side .content-section *,
+      .books-list p,
+      .thought-preview {
+        opacity: 1;
+      }
+
+      .intro-section {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-main {
+        padding-right: 0;
+      }
+
+      .intro-side {
+        position: static;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .highlight-text {
+      color: var(--maroon);
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="scroll-container">
-    <div class="container">
+  <div class="pattern-grid"></div>
+  
+  <div class="header-container">
       <header>
-        <div class="logo">MK</div>
-        <nav>
-          <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="#projects" class="scroll-to-projects">Projects</a></li>
-            <li><a href="thoughts.html">Thoughts</a></li>
-            <li><a href="etc.html">Etc.</a></li>
-          </ul>
-        </nav>
+      <a href="index.html" class="logo">mk</a>
       </header>
+  </div>
 
+  <div class="container">
       <main>
-        <section id="intro" class="section">
-          <div class="intro-content">
-            <div class="intro-image">
-              <img src="/images/intro.jpg" alt="Manvi Kottakota" />
-            </div>
-            <div class="intro-text">
-              <h1>Hey there, I'm Manvi!</h1>
-              <p class="subtitle"><i>Building with impact at scale :)</i></p>
-              <p class="bio">Based in the Bay Area with a background in machine learning and data science, I'm currently working at IBM on B2B go-to-market strategy for Gen AI products like WatsonX. Outside of work, I enjoy running, yoga, hiking, and getting creative with videography and jewelry-making.</p>
-              <p class="bio">Feel free to reach out—I'd love to chat!</p>
+      <section class="intro-section">
+        <div class="intro-main">
+          <div class="intro-header">
+            <h1>hey there, i'm manvi!</h1>
+            <p class="location-text">bay area & boston</p>
               <div class="social-links">
-                <a href="https://www.linkedin.com/in/manvi-kottakota" target="_blank" class="social-icon">
+              <a href="https://substack.com/@manvikottakota" target="_blank" class="substack-button">
+                <i class="fas fa-pen-nib"></i>
+                <span>thoughts</span>
+              </a>
+              <a href="https://www.linkedin.com/in/manvi-kottakota" target="_blank" class="social-icon" title="Connect on LinkedIn">
                   <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/kkmanvi123" target="_blank" class="social-icon">
+              <a href="https://github.com/kkmanvi123" target="_blank" class="social-icon" title="View Projects on GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:kkmanvi123@gmail.com" class="social-icon">
+              <a href="mailto:kkmanvi123@gmail.com" class="social-icon" title="Send Email">
                   <i class="fas fa-envelope"></i>
                 </a>
               </div>
+            <div class="intro-brief">
+              welcome to my corner of the internet, where i document my experiences, share my thoughts, and keep track of what i'm reading. <span class="highlight-text">feel free to explore & connect!</span>
             </div>
           </div>
-        </section>
 
-        <section id="projects" class="section">
-          <h2>Projects</h2>
-          <div class="project-item">
-            <p><strong>
-              <a href="https://github.com/kkmanvi123/root-cause-analysis" target="_blank">
-                Root Cause Analysis (RCA) Model <i class="fas fa-arrow-up-right-from-square"></i>
-              </a></strong> – ML model to predict and diagnose software bugs
-            </p>
+          <div class="content-section">
+            <h2>present //</h2>
+            <p class="section-summary">leading <strong>product</strong> at <a href="https://www.ibm.com/watsonx" class="accent-link">ibm</a>, building growth strategy for gen ai product suite including watsonx & our enterprise data platform.</p>
+            <p>studying data science at <a href="https://www.northeastern.edu" class="accent-link">northeastern</a> (go huskies!), where i was recently named to the <a href="https://news.northeastern.edu/2025/04/16/huntington-100-inductees-2025/" class="accent-link"><strong>huntington 100</strong></a>. outside work, i'm probably on a trail or my yoga mat, capturing life through videography, or catching up with friends.</p>
+            <p>helping scale <a href="https://www.rev.school/" class="accent-link">rev</a>, boston's community for student builders, to <strong>300+ members</strong> and building alongside founders through hacker houses & events with startup exchange, z fellows, etc.</p>
           </div>
-          <div class="project-item">
-            <p><strong>
-              <a href="https://github.com/kkmanvi123/fable-generation" target="_blank">
-                Fable Generation Models <i class="fas fa-arrow-up-right-from-square"></i>
-              </a></strong> – Compared LSTM, GPT-2, and Markov Chains to generate stories
-            </p>
+
+          <div class="content-section">
+            <h2>past //</h2>
+            <p class="section-summary">at <a href="https://www.jnj.com" class="accent-link">johnson & johnson</a>, developed machine learning models to optimize sales forecasting and streamline analytics workflows. at <a href="https://www.linkedin.com/company/payglocal/posts/?feedView=all" class="accent-link">payglocal</a>, architected and engineered an <strong>ml-powered fraud detection system</strong> for secure cross-border payments. worked with <a href="https://www.cadence.com" class="accent-link">cadence design systems</a> through <a href="https://computing.mit.edu/cross-cutting/break-through-tech-ai/" class="accent-link">mit's break through tech ai</a> program on <a href="https://github.com/kkmanvi123/root-cause-analysis" class="accent-link">software bug prediction</a>.</p>
+
+            <p>co-founded and led product & ml development at jot, an ai-powered note-taking platform, securing <a href="https://womenwhoempower.advancement.northeastern.edu/2024-innovator-award-winner-manvi-kottakota-jot/" class="accent-link"><strong>women who empower innovator award</strong></a>. at <strong>16</strong>, founded <a href="https://elestoque.org/2022/02/10/entertainment/kanak-by-manvi/" class="accent-link">kanak</a>, a south asian-inspired jewelry line that grew <strong>240% in revenue</strong> over 3 months.</p>
+
+            <p>grew <a href="https://www.instagram.com/neu_eclub/" class="accent-link">northeastern's entrepreneurs club</a> into a community of <strong>2100+ members</strong> as president, mentoring 32+ founders. led the <a href="https://huntnewsnu.com/86063/campus/at-the-northeastern-university-entrepreneurs-clubs-demo-day-entrepreneurship-mixes-with-creativity/" class="accent-link">husky startup challenge</a> for 2 years, helping <strong>40+ founders per semester</strong> go from idea to launch through hands-on mentorship and $50k in funding.</p>
+
+            <p>along the way, i've done competitive swimming and earned a black belt in taekwondo :)</p>
           </div>
-          <div class="project-item">
-            <p><strong>
-              <a href="https://github.com/kkmanvi123/NLP-framework" target="_blank">
-                NLP Framework <i class="fas fa-arrow-up-right-from-square"></i>
-              </a></strong> – Framework for text analysis, sentiment detection, and visualizations
-            </p>
+
+          <div class="content-section">
+            <h2>future //</h2>
+            <p class="section-summary">building tech that makes ai innovation accessible and human-centered.</p>
           </div>
-          <div class="project-item">
-            <p><strong>
-              <a href="https://github.com/kkmanvi123/mongodb-religionAPI" target="_blank">
-                MongoDB Religion API <i class="fas fa-arrow-up-right-from-square"></i>
-              </a></strong> – API to explore global religious institution data easily
-            </p>
+
+          <div class="content-section">
+            <h2>projects //</h2>
+            <div class="projects-list">
+              <p class="project-item">
+                <a href="https://github.com/kkmanvi123/root-cause-analysis" target="_blank"><strong>root cause analysis</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="project-description">• software bug prediction model</span>
+              </p>
+              <p class="project-item">
+                <a href="https://github.com/kkmanvi123/fable-generation" target="_blank"><strong>fable generation</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="project-description">• generating fables with transformer models</span>
+              </p>
+              <p class="project-item">
+                <a href="https://github.com/kkmanvi123/NLP-framework" target="_blank"><strong>nlp framework</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="project-description">• modular nlp pipeline for text analysis</span>
+              </p>
+              <p class="project-item">
+                <a href="https://github.com/kkmanvi123/mongodb-religionAPI" target="_blank"><strong>religion api</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="project-description">• api for mapping religious institutions</span>
+              </p>
+              <p class="project-item">
+                <a href="https://kkmanvi123.github.io/world-happiness-report/" target="_blank"><strong>happiness report</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="project-description">• interactive visualization of global happiness metrics</span>
+              </p>
+              <p class="project-item">
+                <a href="https://github.com/kkmanvi123/evolutionary-computing" target="_blank"><strong>evolutionary computing</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <span class="project-description">• genetic algorithms for optimization problems</span>
+              </p>
+            </div>
           </div>
-          <div class="project-item">
-            <p><strong>
-              <a href="https://kkmanvi123.github.io/world-happiness-report/" target="_blank">
-                World Happiness Report <i class="fas fa-arrow-up-right-from-square"></i>
-              </a></strong> – Visualized happiness data across countries on a webpage
-            </p>
+        </div>
+
+        <div class="intro-side">
+          <div class="content-section">
+            <h2>recent reads //</h2>
+            <div class="books-list">
+              <p class="book-item">
+                <strong>the creative act</strong> • <span class="book-author">rick rubin</span>
+              </p>
+              <p class="book-item">
+                <strong>tuesdays with morrie</strong> • <span class="book-author">mitch albom</span>
+              </p>
+              <p class="book-item">
+                <strong>taking the leap</strong> • <span class="book-author">pema chödrön</span>
+              </p>
+              <p class="book-item">
+                <strong>just kids</strong> • <span class="book-author">patti smith</span>
+              </p>
+              <p class="book-item">
+                <strong>innocence, knowledge, and wonder</strong> • <span class="book-author">osho</span>
+              </p>
+            </div>
           </div>
-          <div class="project-item">
-            <p><strong>
-              <a href="https://github.com/kkmanvi123/evolutionary-computing" target="_blank">
-                Evolutionary Computing Library <i class="fas fa-arrow-up-right-from-square"></i>
-              </a></strong> – Python library for optimization using genetic algorithms
-            </p>
+
+          <div class="content-section">
+            <h2>thoughts //</h2>
+            <a href="https://substack.com/@manvikottakota/note/p-163750130" target="_blank" class="thought-preview">
+              <div class="thought-date">May 16, 2025</div>
+              <div class="thought-title">the absence of color</div>
+              <div class="thought-subtitle">byee grayscale 👋</div>
+              <div class="thought-read-more">
+                check it out <i class="fas fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="full-width-section">
+          <div class="content-section">
+            <h2>wandering //</h2>
+            <div id="wandering" class="adventures-grid">
+              <div class="adventures-row adventures-row-2">
+                <div class="adventure-card">
+                  <img src="/images/headlands.png" alt="marin headlands" class="adventure-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i>marin headlands</h4>
+                  </div>
+                </div>
+                <div class="adventure-card">
+                  <img src="/images/yosemite.png" alt="yosemite" class="adventure-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i>yosemite</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adventures-row adventures-row-3">
+                <div class="adventure-card">
+                  <img src="/images/alamere.png" alt="alamere falls" class="adventure-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i>alamere falls trail</h4>
+                  </div>
+                </div>
+                <div class="adventure-card">
+                  <img src="/images/tv.png" alt="tennessee valley trail" class="adventure-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i>tennessee valley trail</h4>
+                  </div>
+                </div>
+                <div class="adventure-card">
+                  <img src="/images/eden.png" alt="garden of eden" class="adventure-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i>garden of eden</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adventures-row adventures-row-2">
+                <div class="adventure-card">
+                  <img src="/images/mammoth.png" alt="mammoth lakes" class="adventure-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i>mammoth lakes</h4>
+                  </div>
+                </div>
+                <div class="adventure-card">
+                  <img src="/images/headlands.png" alt="marin headlands sunset" class="adventure-image" />
+                  <div class="adventure-overlay">
+                    <h4><i class="fas fa-map-pin"></i>headlands sunset</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           </div>
         </section>
-      </main>
 
       <footer>
-        <p>&copy; 2025 Manvi Kottakota</p>
+        <p>&copy; 2025 manvi kottakota</p>
       </footer>
-
-      <!-- Back to Top Button -->
-      <button id="backToTop" title="Back to top">
-        <i class="fas fa-arrow-up"></i> Top
-      </button>
-    </div>
+    </main>
   </div>
 
-  <script src="/script.js"></script>
+  <script>
+    let lastScrollTop = 0;
+    const headerContainer = document.querySelector('.header-container');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop) {
+        headerContainer.style.opacity = '0';
+      } else {
+        headerContainer.style.opacity = '1';
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (e.clientY < 100) {
+        headerContainer.style.opacity = '1';
+      }
+    });
+  </script>
 </body>
 </html>
