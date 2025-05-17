@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Manvi Kottakota - Product leader at IBM, building growth strategy for gen ai products. Sharing thoughts on tech, innovation, and life."/>
+  <meta name="theme-color" content="#f5f1eb"/>
   <title>Manvi Kottakota</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png"/>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -107,6 +114,9 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 0 20px;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 4rem;
     }
 
     .intro-section {
@@ -125,11 +135,11 @@
       overflow-y: auto;
       padding-right: 10px;
       margin-bottom: 2rem;
+      margin-top: 0.5rem;
     }
 
-    .intro-side::-webkit-scrollbar {
-      width: 0;
-      height: 0;
+    .intro-side .content-section:first-child {
+      margin-top: 0;
     }
 
     .intro-main {
@@ -168,18 +178,20 @@
       gap: 1rem;
       margin: 1.5rem 0;
       align-items: center;
-      justify-content: flex-start;
     }
 
     .social-icon {
       color: var(--text-light);
       font-size: 1.2rem;
       transition: all 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
     .social-icon:hover {
       color: var(--maroon);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .content-section {
@@ -246,22 +258,19 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      padding: 4px 16px;
+      padding: 3px 16px;
       background-color: var(--maroon);
       color: var(--beige);
       text-decoration: none;
       border-radius: 20px;
       font-size: 0.85rem;
       transition: all 0.3s ease;
-      margin: 0;
-      height: 24px;
-      margin-left: 8px;
+      height: 22px;
     }
 
     .substack-button:hover {
       background-color: var(--maroon-light);
       transform: translateY(-2px);
-      color: var(--beige);
     }
 
     .substack-button i {
@@ -379,7 +388,6 @@
       border-radius: 6px;
       overflow: hidden;
       transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.5);
       height: 280px;
     }
 
@@ -489,15 +497,10 @@
       font-size: 0.75rem;
     }
 
-    .books-grid,
-    .projects-grid {
-      display: none;
-    }
-
     .full-width-section {
       grid-column: 1 / -1;
       margin-top: 4rem;
-      margin-bottom: 2rem;
+      margin-bottom: 0;
       position: relative;
       z-index: 1;
       background: var(--beige);
@@ -671,6 +674,28 @@
       color: var(--maroon);
       font-weight: bold;
     }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1rem;
+      color: var(--maroon);
+      margin: 0 0 1rem 0;
+    }
   </style>
 </head>
 <body>
@@ -705,7 +730,7 @@
                 </a>
               </div>
             <div class="intro-brief">
-              welcome to my corner of the internet, where i document my experiences, share my thoughts, and keep track of what i'm reading. <span class="highlight-text">feel free to explore & connect!</span>
+              welcome to my corner! i'm logging experiences, sharing thoughts, and jotting down what i'm reading. <span class="highlight-text">feel free to explore & reach out :)</span>
             </div>
           </div>
 
@@ -720,16 +745,16 @@
             <h2>past //</h2>
             <p class="section-summary">at <a href="https://www.jnj.com" class="accent-link">johnson & johnson</a>, developed machine learning models to optimize sales forecasting and streamline analytics workflows. at <a href="https://www.linkedin.com/company/payglocal/posts/?feedView=all" class="accent-link">payglocal</a>, architected and engineered an <strong>ml-powered fraud detection system</strong> for secure cross-border payments. worked with <a href="https://www.cadence.com" class="accent-link">cadence design systems</a> through <a href="https://computing.mit.edu/cross-cutting/break-through-tech-ai/" class="accent-link">mit's break through tech ai</a> program on <a href="https://github.com/kkmanvi123/root-cause-analysis" class="accent-link">software bug prediction</a>.</p>
 
-            <p>co-founded and led product & ml development at jot, an ai-powered note-taking platform, securing <a href="https://womenwhoempower.advancement.northeastern.edu/2024-innovator-award-winner-manvi-kottakota-jot/" class="accent-link"><strong>women who empower innovator award</strong></a>. at <strong>16</strong>, founded <a href="https://elestoque.org/2022/02/10/entertainment/kanak-by-manvi/" class="accent-link">kanak</a>, a south asian-inspired jewelry line that grew <strong>240% in revenue</strong> over 3 months.</p>
+            <p>co-founded and led product & ml development at jot, an ai-powered note-taking tool, securing <a href="https://womenwhoempower.advancement.northeastern.edu/2024-innovator-award-winner-manvi-kottakota-jot/" class="accent-link"><strong>women who empower innovator award</strong></a>. at <strong>16</strong>, founded <a href="https://elestoque.org/2022/02/10/entertainment/kanak-by-manvi/" class="accent-link">kanak</a><span style="margin-right: 1px;">,</span> a south asian-inspired jewelry line that grew <strong>240% in revenue</strong> over 3 months.</p>
 
             <p>grew <a href="https://www.instagram.com/neu_eclub/" class="accent-link">northeastern's entrepreneurs club</a> into a community of <strong>2100+ members</strong> as president, mentoring 32+ founders. led the <a href="https://huntnewsnu.com/86063/campus/at-the-northeastern-university-entrepreneurs-clubs-demo-day-entrepreneurship-mixes-with-creativity/" class="accent-link">husky startup challenge</a> for 2 years, helping <strong>40+ founders per semester</strong> go from idea to launch through hands-on mentorship and $50k in funding.</p>
 
-            <p>along the way, i've done competitive swimming and earned a black belt in taekwondo :)</p>
+            <p>along the way, i've done competitive swimming and earned a black belt in taekwondo!</p>
           </div>
 
           <div class="content-section">
             <h2>future //</h2>
-            <p class="section-summary">building tech that makes ai innovation accessible and human-centered.</p>
+            <p class="section-summary">building with impact, connecting with intention, and learning through it all :)</p>
           </div>
 
           <div class="content-section">
@@ -804,51 +829,51 @@
             <div id="wandering" class="adventures-grid">
               <div class="adventures-row adventures-row-2">
                 <div class="adventure-card">
-                  <img src="/images/headlands.png" alt="marin headlands" class="adventure-image" />
+                  <img src="/images/banff.png" alt="lake louise, banff" class="adventure-image" />
                   <div class="adventure-overlay">
-                    <h4><i class="fas fa-map-pin"></i>marin headlands</h4>
+                    <h4><i class="fas fa-map-pin"></i>lake louise, banff</h4>
                   </div>
                 </div>
                 <div class="adventure-card">
-                  <img src="/images/yosemite.png" alt="yosemite" class="adventure-image" />
+                  <img src="/images/headlands.png" alt="marin headlands, ca" class="adventure-image" />
                   <div class="adventure-overlay">
-                    <h4><i class="fas fa-map-pin"></i>yosemite</h4>
+                    <h4><i class="fas fa-map-pin"></i>marin headlands, ca</h4>
                   </div>
                 </div>
               </div>
 
               <div class="adventures-row adventures-row-3">
                 <div class="adventure-card">
-                  <img src="/images/alamere.png" alt="alamere falls" class="adventure-image" />
+                  <img src="/images/alamere.png" alt="alamere falls, ca" class="adventure-image" />
                   <div class="adventure-overlay">
-                    <h4><i class="fas fa-map-pin"></i>alamere falls trail</h4>
+                    <h4><i class="fas fa-map-pin"></i>alamere falls, ca</h4>
                   </div>
                 </div>
                 <div class="adventure-card">
-                  <img src="/images/tv.png" alt="tennessee valley trail" class="adventure-image" />
+                  <img src="/images/tv.png" alt="tennessee valley, ca" class="adventure-image" />
                   <div class="adventure-overlay">
-                    <h4><i class="fas fa-map-pin"></i>tennessee valley trail</h4>
+                    <h4><i class="fas fa-map-pin"></i>tennessee valley, ca</h4>
                   </div>
                 </div>
                 <div class="adventure-card">
-                  <img src="/images/eden.png" alt="garden of eden" class="adventure-image" />
+                  <img src="/images/eden.png" alt="garden of eden, ca" class="adventure-image" />
                   <div class="adventure-overlay">
-                    <h4><i class="fas fa-map-pin"></i>garden of eden</h4>
+                    <h4><i class="fas fa-map-pin"></i>garden of eden, ca</h4>
                   </div>
                 </div>
               </div>
 
               <div class="adventures-row adventures-row-2">
                 <div class="adventure-card">
-                  <img src="/images/mammoth.png" alt="mammoth lakes" class="adventure-image" />
+                  <img src="/images/mammoth.png" alt="mammoth lakes, ca" class="adventure-image" />
                   <div class="adventure-overlay">
-                    <h4><i class="fas fa-map-pin"></i>mammoth lakes</h4>
+                    <h4><i class="fas fa-map-pin"></i>mammoth lakes, ca</h4>
                   </div>
                 </div>
                 <div class="adventure-card">
-                  <img src="/images/headlands.png" alt="marin headlands sunset" class="adventure-image" />
+                  <img src="/images/yosemite.png" alt="yosemite, ca" class="adventure-image" />
                   <div class="adventure-overlay">
-                    <h4><i class="fas fa-map-pin"></i>headlands sunset</h4>
+                    <h4><i class="fas fa-map-pin"></i>yosemite, ca</h4>
                   </div>
                 </div>
               </div>
