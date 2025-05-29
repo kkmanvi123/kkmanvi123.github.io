@@ -533,9 +533,14 @@
     }
 
     .substack-embed iframe {
-      width: 100%;
-      border: none;
-      background: transparent;
+      width: 100% !important;
+      height: 150px !important;
+      background: #f5f1eb !important;
+      font-family: 'Montserrat', sans-serif !important;
+      color: #8b4744 !important;
+      border-radius: 12px !important;
+      border: 1px solid #EEE !important;
+      box-shadow: none !important;
     }
 
     /* Style for Substack post preview */
@@ -712,6 +717,58 @@
       color: var(--maroon);
       margin: 0 0 1rem 0;
     }
+
+    .custom-substack-card {
+      background: rgba(139, 71, 68, 0.08);
+      border-radius: 12px;
+      padding: 1.2rem 1rem 1.2rem 1rem;
+      margin-top: 0.6rem;
+      margin-bottom: 0.5rem;
+      text-align: left;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .custom-substack-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #8b4744;
+      margin-bottom: 0.3rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .custom-substack-desc {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.7rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .custom-substack-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #8b4744;
+      color: #f5f1eb;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 20px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: none;
+      cursor: pointer;
+    }
+    .custom-substack-btn:hover {
+      background: #a85d5a;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .custom-substack-btn i {
+      font-size: 0.9em;
+      margin-right: 0.2em;
+    }
   </style>
 </head>
 <body>
@@ -828,22 +885,13 @@
 
           <div class="content-section">
             <h2>thoughts //</h2>
-            <a href="https://manvikottakota.substack.com/p/the-oatmilk-obsession" target="_blank" class="thought-preview">
-              <div class="thought-date">May 20, 2025</div>
-              <div class="thought-title">the oatmilk obsession</div>
-              <div class="thought-subtitle">everyones' fav daily upcharge</div>
-              <div class="thought-read-more">
-                check it out <i class="fas fa-arrow-up-right-from-square"></i>
-              </div>
-            </a>
-            <a href="https://manvikottakota.substack.com/p/the-absence-of-color" target="_blank" class="thought-preview">
-              <div class="thought-date">May 17, 2025</div>
-              <div class="thought-title">absence of color</div>
-              <div class="thought-subtitle">byee grayscale 👋</div>
-              <div class="thought-read-more">
-                check it out <i class="fas fa-arrow-up-right-from-square"></i>
-              </div>
-            </a>
+            <div class="custom-substack-card">
+              <div class="custom-substack-title">check out my substack</div>
+              <div class="custom-substack-desc">ideas, thoughts, reflections, etc.</div>
+              <a href="https://manvikottakota.substack.com/" target="_blank" class="custom-substack-btn">
+                <i class="fas fa-envelope-open-text"></i> subscribe
+              </a>
+            </div>
           </div>
         </div>
 
