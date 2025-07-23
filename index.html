@@ -36,6 +36,14 @@
       font-size: 0.9rem;
     }
 
+    * {
+      text-decoration: none !important;
+    }
+
+    a:hover {
+      text-decoration: none !important;
+    }
+
     .header-container {
       position: fixed;
       top: 0;
@@ -68,7 +76,7 @@
 
     .accent-link {
       color: var(--maroon);
-      text-decoration: none;
+      text-decoration: none !important;
       transition: color 0.3s ease;
       position: relative;
     }
@@ -122,7 +130,20 @@
       position: relative;
       padding-bottom: 4rem;
     }
-
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      width: 100%;
+      background: var(--beige);
+    }
+    @media (max-width: 600px) {
+      footer {
+        font-size: 0.75rem;
+        padding: 0.7rem 0;
+      }
+    }
     .intro-section {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -265,7 +286,7 @@
       padding: 3px 16px;
       background-color: var(--maroon);
       color: var(--beige);
-      text-decoration: none;
+      text-decoration: none !important;
       border-radius: 20px;
       font-size: 0.85rem;
       transition: all 0.3s ease;
@@ -275,10 +296,26 @@
     .substack-button:hover {
       background-color: var(--maroon-light);
       transform: translateY(-2px);
+      color: var(--beige);
+      text-decoration: none;
     }
 
     .substack-button i {
       font-size: 0.75rem;
+    }
+
+    .substack-button.portfolio-btn {
+      background: rgba(139, 71, 68, 0.1);
+      color: #8b4744;
+      border: 1px solid rgba(139, 71, 68, 0.2);
+      text-decoration: none !important;
+    }
+
+    .substack-button.portfolio-btn:hover {
+      background: rgba(139, 71, 68, 0.2);
+      color: #8b4744;
+      transform: translateY(-2px);
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -694,22 +731,6 @@
     .highlight-text {
       color: var(--maroon);
       font-weight: bold;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      width: 100%;
-    }
-
-    footer p {
-      margin: 0;
     }
 
     h2 {
@@ -1170,20 +1191,163 @@
       color: var(--maroon-light);
       text-decoration: underline;
     }
+    .toggle-switch-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 1;
+    }
+    .toggle-switch {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 40px;
+    }
+    .toggle-switch input[type="checkbox"] {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .toggle-switch label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      padding: 0 0 0 0;
+    }
+    .toggle-slider {
+      width: 60px;
+      height: 32px;
+      background: #f5f1eb;
+      border: 2px solid #8b4744;
+      border-radius: 20px;
+      position: relative;
+      transition: background 0.3s;
+      margin: 0 10px;
+    }
+    .toggle-slider:before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      width: 24px;
+      height: 24px;
+      background: #8b4744;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .toggle-switch input[type="checkbox"]:checked + label .toggle-slider:before {
+      transform: translateX(28px);
+    }
+    .toggle-label {
+      font-size: 1rem;
+      color: #8b4744;
+      font-weight: 500;
+      margin: 0 6px;
+      opacity: 0.6;
+      transition: opacity 0.3s, color 0.3s;
+    }
+    .toggle-switch input[type="checkbox"]:not(:checked) + label .home-label {
+      opacity: 1;
+      color: #8b4744;
+    }
+    .toggle-switch input[type="checkbox"]:checked + label .portfolio-label {
+      opacity: 1;
+      color: #8b4744;
+    }
+    .toggle-switch input[type="checkbox"]:checked + label .home-label {
+      opacity: 0.6;
+      color: #8b4744;
+    }
+    .toggle-switch input[type="checkbox"]:not(:checked) + label .portfolio-label {
+      opacity: 0.6;
+      color: #8b4744;
+    }
+    @media (max-width: 600px) {
+      .toggle-switch-container {
+        justify-content: center;
+      }
+    }
+    .clean-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #8b4744;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: lowercase;
+    }
+    .nav-link {
+      cursor: pointer;
+      transition: color 0.2s ease;
+      color: #8b4744;
+      opacity: 0.6;
+      font-weight: 400;
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+      border: none;
+      background: none;
+      outline: none;
+      text-transform: lowercase;
+    }
+    .nav-link.active {
+      color: #8b4744;
+      opacity: 1;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      opacity: 0.8;
+      color: #a85d5a;
+    }
+    @media (max-width: 600px) {
+      .clean-nav {
+        font-size: 0.85rem;
+        gap: 1rem;
+      }
+    }
+    .portfolio-title-maroon {
+      color: #8b4744;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0.4rem 0 0.6rem 0;
+      letter-spacing: 0.01em;
+      display: inline-block;
+      position: relative;
+    }
+    .portfolio-body-text {
+      font-size: 1.15rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+    }
+    a {
+      color: #8b4744;
+      text-decoration: none;
+      transition: color 0.2s, border-bottom 0.2s;
+    }
+    a:hover, a:focus {
+      color: #a85d5a;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="pattern-grid"></div>
   
   <div class="header-container">
-      <header>
-      <a href="index.html" class="logo">mk</a>
+      <header style="display: flex; align-items: center; justify-content: space-between;">
+        <a href="#" class="logo">mk</a>
+        <nav class="clean-nav">
+          <span id="navHome" class="nav-link active" onclick="showSection('home')">Home</span>
+          <span id="navPortfolio" class="nav-link" onclick="showSection('portfolio')">Portfolio</span>
+        </nav>
       </header>
   </div>
 
   <div class="container">
       <main>
-      <section class="intro-section">
+        <section id="homeSection" class="toggle-section">
+          <div class="intro-section">
         <div class="intro-main">
           <div class="intro-header">
             <h1>hi there, i'm manvi!</h1>
@@ -1193,15 +1357,19 @@
                 <i class="fas fa-pen-nib"></i>
                 <span>substack</span>
               </a>
+                  <a href="#" onclick="showSection('portfolio')" class="substack-button portfolio-btn">
+                    <i class="fas fa-briefcase"></i>
+                    <span>portfolio</span>
+                  </a>
               <a href="https://www.linkedin.com/in/manvi-kottakota" target="_blank" class="social-icon" title="Connect on LinkedIn">
                   <i class="fab fa-linkedin"></i>
                 </a>
               <a href="https://github.com/kkmanvi123" target="_blank" class="social-icon" title="View Projects on GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-              <a href="mailto:kkmanvi123@gmail.com" class="social-icon" title="Send Email">
-                  <i class="fas fa-envelope"></i>
-                </a>
+                                    <a href="https://x.com/kkmanvi123" target="_blank" class="social-icon" title="Follow on X">
+                      <span style="font-weight: bold; font-size: 1.2rem;">𝕏</span>
+                    </a>
               </div>
             <div class="intro-brief">
             </div>
@@ -1227,36 +1395,6 @@
           <div class="content-section">
             <h2>future //</h2>
             <p class="section-summary">building with impact & always learning :)</p>
-          </div>
-
-          <div class="content-section">
-            <h2>projects //</h2>
-            <div class="projects-list">
-              <p class="project-item">
-                <a href="https://github.com/kkmanvi123/root-cause-analysis" target="_blank"><strong>root cause analysis</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
-                <span class="project-description">• software bug prediction model</span>
-              </p>
-              <p class="project-item">
-                <a href="https://github.com/kkmanvi123/fable-generation" target="_blank"><strong>fable generation</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
-                <span class="project-description">• generating fables with transformer models</span>
-              </p>
-              <p class="project-item">
-                <a href="https://github.com/kkmanvi123/NLP-framework" target="_blank"><strong>nlp framework</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
-                <span class="project-description">• modular nlp pipeline for text analysis</span>
-              </p>
-              <p class="project-item">
-                <a href="https://github.com/kkmanvi123/mongodb-religionAPI" target="_blank"><strong>religion api</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
-                <span class="project-description">• api for mapping religious institutions</span>
-              </p>
-              <p class="project-item">
-                <a href="https://kkmanvi123.github.io/world-happiness-report/" target="_blank"><strong>happiness report</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
-                <span class="project-description">• interactive visualization of global happiness metrics</span>
-              </p>
-              <p class="project-item">
-                <a href="https://github.com/kkmanvi123/evolutionary-computing" target="_blank"><strong>evolutionary computing</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
-                <span class="project-description">• genetic algorithms for optimization problems</span>
-              </p>
-            </div>
           </div>
         </div>
 
@@ -1293,14 +1431,14 @@
                   <div class="timeline-subtitle">growth & resilience are not solo acts</div>
                 </div>
               </div>
-              <div class="timeline-entry">
-                <div class="timeline-dot"></div>
-                <div>
-                  <div class="timeline-date">jul 9</div>
-                  <a href="https://manvikottakota.substack.com/p/my-adapting-relationship-with-time" target="_blank" class="timeline-title">my adapting relationship with time</a>
-                  <div class="timeline-subtitle">learning how to carry it, not just keep up</div>
-                </div>
-              </div>
+                                <div class="timeline-entry">
+                    <div class="timeline-dot"></div>
+                    <div>
+                      <div class="timeline-date">jul 9</div>
+                      <a href="https://manvikottakota.substack.com/p/time" target="_blank" class="timeline-title">my adapting relationship with time</a>
+                      <div class="timeline-subtitle">learning how to carry it, not just keep up</div>
+                    </div>
+                  </div>
               <div class="timeline-entry">
                 <div class="timeline-dot"></div>
                 <div>
@@ -1414,34 +1552,104 @@
           </div>
           </div>
         </section>
-
+          <section id="portfolioSection" class="toggle-section" style="display:none;">
+            <div class="content-section">
+              <h2 class="portfolio-title-maroon">portfolio //</h2>
+              
+              <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 0.85rem; color: #a85d5a; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 1.5rem; text-transform: uppercase;">featured</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+                  <div>
+                    <div style="font-size: 0.95rem; color: #333; font-family: 'Montserrat', sans-serif; font-weight: 500; margin-bottom: 0.5rem;">
+                      <a href="https://wisprflow.ai/" target="_blank" class="accent-link">wispr flow</a>
+                      <span style="color: #888; font-weight: 400;">&nbsp;&middot;&nbsp;deep dive on onboarding friction based on 2 in-depth user interviews + my own use</span>
+                    </div>
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; padding-bottom: 0; margin: 1rem 0 0; overflow: hidden; border-radius: 8px; will-change: transform; background: transparent;">
+                      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0; background: #fff;" src="https://www.canva.com/design/DAGtZuB62MU/cLNvaOAoFcd7tAg3TmunGQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <div style="font-size: 0.95rem; color: #333; font-family: 'Montserrat', sans-serif; font-weight: 500; margin-bottom: 0.5rem;">
+                      <a href="https://v0-inkwell-landing-page-iota.vercel.app/" target="_blank" class="accent-link">inkwell</a>
+                      <span style="color: #888; font-weight: 400;">&nbsp;&middot;&nbsp;an ai-curated digest that summarizes news from your favorite sources</span>
+                    </div>
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; padding-bottom: 0; margin: 1rem 0 0; overflow: hidden; border-radius: 8px; will-change: transform; background: transparent;">
+                      <iframe loading="lazy" style="position: absolute; width: 143%; height: 143%; top: 0; left: 0; border: none; padding: 0; margin: 0; background: #fff; transform: scale(0.7); transform-origin: top left;" src="https://v0-inkwell-landing-page-iota.vercel.app/" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                      <a href="https://v0-inkwell-landing-page-iota.vercel.app/" target="_blank" style="position: absolute; bottom: 12px; right: 16px; color: #8b4744; background: rgba(245,241,235,0.85); border-radius: 50%; padding: 7px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.10); z-index: 2;">
+                        <i class="fas fa-arrow-up-right-from-square" style="font-size:1.05em;"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 style="font-size: 0.85rem; color: #a85d5a; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 1.5rem; text-transform: uppercase;">other projects</h3>
+                <div class="projects-list">
+                  <p class="project-item">
+                    <a href="https://github.com/kkmanvi123/root-cause-analysis" target="_blank"><strong>root cause analysis</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <span class="project-description">• software bug prediction model</span>
+                  </p>
+                  <p class="project-item">
+                    <a href="https://github.com/kkmanvi123/fable-generation" target="_blank"><strong>fable generation</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <span class="project-description">• generating fables with transformer models</span>
+                  </p>
+                  <p class="project-item">
+                    <a href="https://github.com/kkmanvi123/NLP-framework" target="_blank"><strong>nlp framework</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <span class="project-description">• modular nlp pipeline for text analysis</span>
+                  </p>
+                  <p class="project-item">
+                    <a href="https://github.com/kkmanvi123/mongodb-religionAPI" target="_blank"><strong>religion api</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <span class="project-description">• api for mapping religious institutions</span>
+                  </p>
+                  <p class="project-item">
+                    <a href="https://kkmanvi123.github.io/world-happiness-report/" target="_blank"><strong>happiness report</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <span class="project-description">• interactive visualization of global happiness metrics</span>
+                  </p>
+                  <p class="project-item">
+                    <a href="https://github.com/kkmanvi123/evolutionary-computing" target="_blank"><strong>evolutionary computing</strong> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    <span class="project-description">• genetic algorithms for optimization problems</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
       <footer>
         <p>&copy; 2025 manvi kottakota</p>
       </footer>
-    </main>
   </div>
 
   <script>
     let lastScrollTop = 0;
     const headerContainer = document.querySelector('.header-container');
-
     window.addEventListener('scroll', () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
       if (scrollTop > lastScrollTop) {
         headerContainer.style.opacity = '0';
       } else {
         headerContainer.style.opacity = '1';
       }
-      
       lastScrollTop = scrollTop;
     });
-
     document.addEventListener('mousemove', (e) => {
       if (e.clientY < 100) {
         headerContainer.style.opacity = '1';
       }
     });
+      function showSection(section) {
+        document.getElementById('homeSection').style.display = section === 'home' ? '' : 'none';
+        document.getElementById('portfolioSection').style.display = section === 'portfolio' ? '' : 'none';
+        document.getElementById('navHome').classList.toggle('active', section === 'home');
+        document.getElementById('navPortfolio').classList.toggle('active', section === 'portfolio');
+      }
+      // Set initial state
+      window.onload = function() {
+        showSection('home');
+      };
   </script>
 </body>
 </html>
